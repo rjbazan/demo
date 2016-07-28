@@ -1,0 +1,30 @@
+<div class="col-md-6 form-inline">
+  <div class="container-wrapper">
+    <div class="form-group">
+      <select
+        name="document-option" 
+        class="form-control"
+        ng-model="vm.selected_option"
+        ng-options="item.code as item.name for item in vm.options"
+        ng-change="vm.showIngredients()"
+        ng-init="vm.showIngredients()">
+      </select>
+    </div>
+    <div class="form-group pull-right">
+      <input type="text" class="form-control" id="search" placeholder="Search..." ng-model="vm.query">
+    </div>
+  </div>
+  <div class="jumbotron">
+    <ul>
+      <li ng-repeat="item in vm.ingredients | filter:vm.query">{{item.name}}</li>
+    </ul>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="form-group text-center">
+    <h5>Your Recipe</h5>
+  </div>
+  <div class="jumbotron">
+
+  </div>
+</div>
